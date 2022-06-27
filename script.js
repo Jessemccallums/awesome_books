@@ -1,3 +1,4 @@
+
 const aweosomeBooks = [
     {
         title: "Lorem",
@@ -12,6 +13,7 @@ const aweosomeBooks = [
         author: "Tom Robbins"
     }
 ]
+
 
 const titleEl = document.querySelector('#title');
 const authorEl = document.querySelector('#author');
@@ -29,3 +31,18 @@ addBtn.addEventListener('click', (e) => {
 
     console.log(aweosomeBooks);
 })
+
+const displaySection = document.querySelector('#display');
+
+function display() {
+    aweosomeBooks.forEach((book) => {
+    displaySection.innerHTML += `
+      <p>${book.title}</p>
+      <p>${book.author}</p>
+      <button class="remove">Remove</button>
+      <hr>
+    `;
+})
+};
+
+display();
