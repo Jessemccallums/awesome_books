@@ -95,7 +95,7 @@ class Book {
               <div class="bookstyle">
               <p>"${book.title}" by ${book.author}</p>
               <button class="remove" id="${book.id}">Remove</button>
-              <hr>
+              
               </div>
             `;
         });

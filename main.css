@@ -1,7 +1,7 @@
 * {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 
 
@@ -10,40 +10,74 @@
     flex-direction: column;
     border: 2px solid rgb(0, 0, 0);
     width: 50%;
+    margin: 50px auto;
 }
 
 .bookstyle {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    align-content: center;
+    align-items: center;
+    padding: 15px 8px;
 }
 
-form,section,h1 {
+/* form,
+section,
+h1 {
     margin: 100px auto;
     width: 50%;
-}
+} */
+
+
 
 .bookstyle:nth-child(odd) {
     background: rgb(208, 208, 208);
-  }
-
-.remove{
-    margin-right: 10px;
-    align-content: center;
-    display: flex;
-   
 }
 
+.remove {
+    padding: 10px 8px;
+    align-content: center;
+    display: flex;
+    -webkit-box-shadow: 1px 4px 5px 0px rgba(0,0,0,0.75);
+    -moz-box-shadow: 1px 4px 5px 0px rgba(0,0,0,0.75);
+    box-shadow: 1px 4px 5px 0px rgba(0,0,0,0.75);
+    background-color: rgb(255, 255, 255);
+    border: 2px solid rgb(0, 0, 0);
+}
 
-.form1{
+.form1 {
     display: flex;
     flex-direction: column;
-    align-items: center;
-    align-content: center;
+    width: 30%;
+    margin: auto;
+    align-items:flex-end;
+    justify-content:space-evenly;
 }
 
-h1{
+input {
+    width: 100%;
+    margin-bottom: 10px;
+    border: 2px solid rgb(0, 0, 0);
+}
+
+
+
+#add-btn {
+    -moz-box-shadow: 1px 4px 5px 0px rgba(0,0,0,0.75);
+    box-shadow: 1px 4px 5px 0px rgba(0,0,0,0.75);
+    background-color: rgb(255, 255, 255);
+    border: 2px solid rgb(0, 0, 0);
+    padding: 3px 5px;
+}
+
+h1 {
     text-align: center;
+    margin-top: 50px;
 }
 
+
+
+hr {
+    width: 130px;
+    margin: 10px auto;
+}
