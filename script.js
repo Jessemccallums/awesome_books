@@ -14,15 +14,15 @@ addBtn.addEventListener('click', (e) => {
       id: Date.now().toString(),
     };
     awesomeBooks.push(newBook);
-    
+
     // awesomeBooks = awesomeBooks.concat(JSON.parse(localStorage.getItem('awesomeBooks')));
     localStorage.setItem('awesomeBooks', JSON.stringify(awesomeBooks));
-  
+
     window.location.reload();
   } else {
-    const error_message = document.querySelector("#message-alert");
+    const errorMessage = document.querySelector('#message-alert');
 
-    error_message.textContent = "fill all the field";
+    errorMessage.textContent = 'fill all the field';
   }
 });
 
