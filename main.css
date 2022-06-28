@@ -2,4 +2,69 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+  font-family: monospace;
+}
+
+#display {
+  display: flex;
+  flex-direction: column;
+  border: 2px solid rgb(0, 0, 0);
+  width: 50%;
+  margin: 50px auto;
+}
+
+.bookstyle {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 8px;
+}
+
+.bookstyle:nth-child(odd) {
+  background: rgb(208, 208, 208);
+}
+
+.remove {
+  padding: 10px 8px;
+  align-content: center;
+  display: flex;
+  -webkit-box-shadow: 1px 4px 5px 0 rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 1px 4px 5px 0 rgba(0, 0, 0, 0.75);
+  box-shadow: 1px 4px 5px 0 rgba(0, 0, 0, 0.75);
+  background-color: rgb(255, 255, 255);
+  border: 2px solid rgb(0, 0, 0);
+}
+
+.form1 {
+  display: flex;
+  flex-direction: column;
+  width: 30%;
+  margin: 30px auto;
+  align-items: flex-end;
+  justify-content: space-evenly;
+}
+
+input {
+  width: 100%;
+  margin-bottom: 10px;
+  border: 2px solid rgb(0, 0, 0);
+}
+
+#add-btn {
+  -moz-box-shadow: 1px 4px 5px 0 rgba(0, 0, 0, 0.75);
+  box-shadow: 1px 4px 5px 0 rgba(0, 0, 0, 0.75);
+  background-color: rgb(255, 255, 255);
+  border: 2px solid rgb(0, 0, 0);
+  padding: 3px 5px;
+}
+
+h1 {
+  text-align: center;
+  margin-top: 50px;
+}
+
+hr {
+  width: 130px;
+  margin: 10px auto;
 }
