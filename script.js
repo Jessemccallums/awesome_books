@@ -1,11 +1,11 @@
 const titleEl = document.querySelector('#title');
 const authorEl = document.querySelector('#author');
 const addBtn = document.querySelector('#add-btn');
-const removeBtn = document.querySelectorAll(".remove");
 
 addBtn.addEventListener('click', (e) => {
   e.preventDefault();
   let awesomeBooks = [];
+  awesomeBooks = JSON.parse(localStorage.getItem('awesomeBooks') || '[]');
   console.log(awesomeBooks);
   if (titleEl.value !== '' && authorEl.value !== '') {
     const newBook = {
@@ -14,13 +14,15 @@ addBtn.addEventListener('click', (e) => {
       id: Date.now().toString(),
     };
     awesomeBooks.push(newBook);
-    console.log(awesomeBooks);
-    awesomeBooks = awesomeBooks.concat(JSON.parse(localStorage.getItem('awesomeBooks')));
+    
+    // awesomeBooks = awesomeBooks.concat(JSON.parse(localStorage.getItem('awesomeBooks')));
     localStorage.setItem('awesomeBooks', JSON.stringify(awesomeBooks));
-    console.log(awesomeBooks);
+  
     window.location.reload();
   } else {
-    alert('invalid input value');
+    const error_message = document.querySelector("#message-alert");
+
+    error_message.textContent = "fill all the field";
   }
 });
 
@@ -28,7 +30,7 @@ const displaySection = document.querySelector('#display');
 
 function display() {
   let awesomeBooks = [];
-  awesomeBooks = JSON.parse(localStorage.getItem('awesomeBooks'));
+  awesomeBooks = JSON.parse(localStorage.getItem('awesomeBooks') || '[]');
 
   awesomeBooks.forEach((book) => {
     displaySection.innerHTML += `
@@ -44,16 +46,13 @@ function display() {
 
 display();
 
-function deleteBtn(e){
-    
-    let awesomeBooks = [];
-    awesomeBooks = awesomeBooks.concat(JSON.parse(localStorage.getItem('awesomeBooks')));
-    
-    if (!e.target.classList.contains("remove")){
-        return;
-    }
-    
-    const boton = e.target;
-    boton.closest("div").remove();
-}
-
+const removeBtn = document.querySelectorAll('.remove');
+removeBtn.forEach((btn) => {
+  btn.addEventListener('click', (e) => {
+    // e.preventDefault();
+    let awesomeBooks = JSON.parse(localStorage.getItem('awesomeBooks'));
+    awesomeBooks = awesomeBooks.filter((book) => book.id !== e.target.id);
+    localStorage.setItem('awesomeBooks', JSON.stringify(awesomeBooks));
+    window.location.reload();
+  });
+});
