@@ -6,7 +6,6 @@ Awesome books, this is a project from Microverse curriculum where we had to crea
 ## Built With
 
 - HTML
-- CSS
 - JAVASCRIPT
 - Linters
 
