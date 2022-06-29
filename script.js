@@ -1,62 +1,3 @@
-// const titleEl = document.querySelector('#title');
-// const authorEl = document.querySelector('#author');
-// const addBtn = document.querySelector('#add-btn');
-
-// addBtn.addEventListener('click', (e) => {
-//   e.preventDefault();
-//   let awesomeBooks = [];
-//   awesomeBooks = JSON.parse(localStorage.getItem('awesomeBooks') || '[]');
-//   console.log(awesomeBooks);
-//   if (titleEl.value !== '' && authorEl.value !== '') {
-//     const newBook = {
-//       title: titleEl.value,
-//       author: authorEl.value,
-//       id: Date.now().toString(),
-//     };
-//     awesomeBooks.push(newBook);
-
-//     // awesomeBooks = awesomeBooks.concat(JSON.parse(localStorage.getItem('awesomeBooks')));
-//     localStorage.setItem('awesomeBooks', JSON.stringify(awesomeBooks));
-
-//     window.location.reload();
-//   } else {
-//     const errorMessage = document.querySelector('#message-alert');
-
-//     errorMessage.textContent = 'fill all the field';
-//   }
-// });
-
-// const displaySection = document.querySelector('#display');
-
-// function display() {
-//   let awesomeBooks = [];
-//   awesomeBooks = JSON.parse(localStorage.getItem('awesomeBooks') || '[]');
-
-//   awesomeBooks.forEach((book) => {
-//     displaySection.innerHTML += `
-//       <div>
-//       <p>${book.title}</p>
-//       <p>${book.author}</p>
-//       <button class="remove" id="${book.id}">Remove</button>
-//       <hr>
-//       </div>
-//     `;
-//   });
-// }
-
-// display();
-
-// const removeBtn = document.querySelectorAll('.remove');
-// removeBtn.forEach((btn) => {
-//   btn.addEventListener('click', (e) => {
-//     // e.preventDefault();
-//     let awesomeBooks = JSON.parse(localStorage.getItem('awesomeBooks'));
-//     awesomeBooks = awesomeBooks.filter((book) => book.id !== e.target.id);
-//     localStorage.setItem('awesomeBooks', JSON.stringify(awesomeBooks));
-//     window.location.reload();
-//   });
-// });
-
 class Book {
   constructor(title, author) {
     this.title = title;
@@ -69,6 +10,7 @@ class Book {
     const author = document.querySelector('#author');
     const addBtn = document.querySelector('#add-btn');
     const errorMessage = document.querySelector('#message-alert');
+    const addMessage = document.querySelector('#add-message');
 
     addBtn.addEventListener('click', (e) => {
       e.preventDefault();
@@ -78,20 +20,25 @@ class Book {
         const newBook = new Book(title.value, author.value);
         awesomeBooks.push(newBook);
         localStorage.setItem('awesomeBooks', JSON.stringify(awesomeBooks));
-        window.location.reload();
+        // window.location.reload();
+        title.value = '';
+        author.value = '';
+        addMessage.style.display = 'flex';
+        errorMessage.textContent = '';
       } else {
         errorMessage.textContent = 'Please fill every field';
+        addMessage.style.display = 'none';
       }
     });
   }
 
   static display() {
-    const displaySection = document.querySelector('#display');
+    const displayContainer = document.querySelector('#display');
     let awesomeBooks = [];
     awesomeBooks = JSON.parse(localStorage.getItem('awesomeBooks') || '[]');
 
     awesomeBooks.forEach((book) => {
-      displaySection.innerHTML += `
+      displayContainer.innerHTML += `
               <div class="bookstyle">
               <p>"${book.title}" by ${book.author}</p>
               <button class="remove" id="${book.id}">Remove</button>
@@ -119,3 +66,48 @@ Book.add();
 Book.display();
 
 Book.remove();
+
+const listLink = document.querySelector('#list');
+const addLink = document.querySelector('#add');
+const contactLink = document.querySelector('#contact');
+
+const listPage = document.querySelector('#display-section');
+const formPage = document.querySelector('#form-section');
+const contactPage = document.querySelector('#contact-section');
+
+listLink.addEventListener('click', () => {
+  listPage.style.display = 'flex';
+  formPage.style.display = 'none';
+  contactPage.style.display = 'none';
+  window.location.reload();
+});
+
+addLink.addEventListener('click', () => {
+  listPage.style.display = 'none';
+  formPage.style.display = 'flex';
+  contactPage.style.display = 'none';
+});
+
+contactLink.addEventListener('click', () => {
+  listPage.style.display = 'none';
+  formPage.style.display = 'none';
+  contactPage.style.display = 'flex';
+});
+
+const timeSlot = document.querySelector('#time');
+
+function displayTime() {
+  const now = new Date();
+  const month = (now.getMonth() + 1).toString();
+  const year = now.getFullYear().toString();
+  const day = now.getDay().toString();
+  const hour = now.getHours().toString();
+  const minute = now.getMinutes().toString();
+  const second = now.getSeconds().toString();
+
+  const timeToShow = `${month} ${day} ${year}, ${hour}:${minute}:${second}`;
+
+  timeSlot.textContent = timeToShow;
+}
+
+displayTime();
