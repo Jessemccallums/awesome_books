@@ -5,7 +5,7 @@
   font-family: monospace;
 }
 
-header{
+header {
   border: 2px solid rgb(0, 0, 0);
   display: flex;
   justify-content: space-between;
@@ -13,14 +13,15 @@ header{
   margin: 25px;
 }
 
-footer{
+footer {
   position: fixed;
   bottom: 1px;
   border: 2px solid rgb(0, 0, 0);
   width: 95vw;
-  padding:5px;
+  padding: 5px;
   margin: 25px;
 }
+
 #logo {
   padding: 5px;
 }
@@ -39,7 +40,6 @@ a {
 
 a:hover {
   color: blue;
-
 }
 
 .bordered {
@@ -54,7 +54,6 @@ a:hover {
 
 #display-section {
   flex-direction: column;
-  
 }
 
 #display {
@@ -64,7 +63,6 @@ a:hover {
   margin: 50px 25px;
   scroll-behavior: smooth;
   overflow: scroll;
-
   height: 60vh;
 }
 
@@ -130,13 +128,13 @@ hr {
   margin-top: 10%;
 }
 
-h2{
+h2 {
   margin: auto;
 }
+
 #contact-section {
   display: none;
   flex-direction: column;
   margin-top: 10%;
   align-items: center;
 }
-
