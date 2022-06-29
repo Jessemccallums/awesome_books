@@ -28,13 +28,11 @@ class Book {
       } else {
         errorMessage.textContent = 'Please fill every field';
         addMessage.style.display = 'none';
-
       }
     });
   }
 
   static display() {
-
     const displayContainer = document.querySelector('#display');
     let awesomeBooks = [];
     awesomeBooks = JSON.parse(localStorage.getItem('awesomeBooks') || '[]');
@@ -48,7 +46,6 @@ class Book {
               </div>
             `;
     });
-
   }
 
   static remove() {
@@ -83,7 +80,6 @@ listLink.addEventListener('click', () => {
   formPage.style.display = 'none';
   contactPage.style.display = 'none';
   window.location.reload();
-
 });
 
 addLink.addEventListener('click', () => {
