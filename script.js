@@ -98,7 +98,7 @@ function displayTime() {
   const minute = now.getMinutes().toString();
   const second = now.getSeconds().toString();
 
-  const timeToShow = month + ' ' + day + ' ' + year +', ' + hour+':'+minute+':'+second;
+  const timeToShow = `${month} ${day} ${year}, ${hour}:${minute}:${second}`;
 
   timeSlot.textContent = timeToShow;
 }
