@@ -54,7 +54,6 @@ a:hover {
   border-right: 2px solid blue;
 }
 
-
 #display {
   display: flex;
   flex-direction: column;
@@ -126,3 +125,4 @@ hr {
 #contact-section {
   display: none;
 }
+

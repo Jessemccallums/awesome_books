@@ -60,3 +60,20 @@ Book.add();
 Book.display();
 
 Book.remove();
+
+const listLink = document.querySelector('#list');
+const addLink = document.querySelector('#add');
+const contactLink = document.querySelector('#contact');
+
+const listPage = document.querySelector('#display');
+const formPage = document.querySelector('#form-section');
+const contactPage = document.querySelector('#contact-section');
+
+const timeSlot = document.querySelector('#time');
+
+
+listLink.addEventListener('click', () => {
+  listPage.style.display = 'flex';
+  formPage.style.display = 'none';
+  contactPage.style.display = 'none';
+})
