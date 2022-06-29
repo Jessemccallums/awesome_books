@@ -23,7 +23,7 @@ footer {
   margin: 25px; */
 }
 
-footer,
+footer>
 p {
   padding: 2.5px;
 }
