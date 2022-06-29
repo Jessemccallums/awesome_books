@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,21 +8,49 @@
     <title>Awesome Books</title>
     <link rel="stylesheet" href="main.css">
 </head>
+
 <body>
-    <h1>Awesome books</h1>
+    <header>
+        <div id="logo">Awesome Books</div>
+        <nav>
+            <ul id="nav-list">
+                <li><a id="list" href="#">List</a></li>
+                <li><a id="add" href="#">Add new</a></li>
+                <li><a id="contact" href="#">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <p id="time"></p>
     <section id="display">
-        <!-- <p>Lorem ipsum</p>
-        <p>Lorem author</p>
-        <button class="remove">Remove</button>
-        <hr> -->
+        <h1>Awesome books</h1>
+
     </section>
-    <hr>
-    <form class="form1">
-        <input type="text" id="title" placeholder="Title">
-        <input type="text" id="author" placeholder="Author">
-        <div id="message-alert"></div>
-        <button id="add-btn">Add</button>
-    </form>
+
+    <section id="form-section">
+        <h2>Add a new book</h2>
+        <form class="form1">
+            <input type="text" id="title" placeholder="Title">
+            <input type="text" id="author" placeholder="Author">
+            <div id="message-alert"></div>
+            <button id="add-btn">Add</button>
+        </form>
+    </section>
+
+    <section id="contact-section">
+        <h2>Contact information</h2>
+        <p>Do you have any questions or you just want to say "Hello"?<br> You can reach out to us!</p>
+
+        <ul>
+            <li>Our e-mail: mail@mail.com</li>
+            <li>Our phone number: 282539427133</li>
+            <li>Our address: Waay over the hill Street, Who knows where</li>
+        </ul>
+    </section>
+
+    <footer>
+        <p>Copyright ...</p>
+    </footer>
     <script src="script.js"></script>
 </body>
+
 </html>
