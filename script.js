@@ -27,12 +27,12 @@ class Book {
   }
 
   static display() {
-    const displaySection = document.querySelector('#display-section');
+    const displayContainer = document.querySelector('#display');
     let awesomeBooks = [];
     awesomeBooks = JSON.parse(localStorage.getItem('awesomeBooks') || '[]');
 
     awesomeBooks.forEach((book) => {
-      displaySection.innerHTML += `
+      displayContainer.innerHTML += `
               <div class="bookstyle">
               <p>"${book.title}" by ${book.author}</p>
               <button class="remove" id="${book.id}">Remove</button>

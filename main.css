@@ -10,34 +10,25 @@ header{
   display: flex;
   justify-content: space-between;
   align-items: center;
+  margin: 25px;
 }
 
 footer{
   position: fixed;
   bottom: 1px;
   border: 2px solid rgb(0, 0, 0);
-  width: 100vw;
+  width: 95vw;
   padding:5px;
+  margin: 25px;
 }
 #logo {
   padding: 5px;
-  /* margin-left: 20px; */
 }
-
-/* nav {
-  border: dotted;
-  width: auto;
-} */
 
 #nav-list {
   margin-right: 20px;
   display: flex;
   list-style-type: none;
-}
-
-.nav-item {
-  /* padding: 5px; */
-
 }
 
 a {
@@ -61,12 +52,20 @@ a:hover {
   border-right: 2px solid blue;
 }
 
+#display-section {
+  flex-direction: column;
+  
+}
+
 #display {
   display: flex;
   flex-direction: column;
   border: 2px solid rgb(0, 0, 0);
-  width: 50%;
-  margin: 50px auto;
+  margin: 50px 25px;
+  scroll-behavior: smooth;
+  overflow: scroll;
+
+  height: 60vh;
 }
 
 .bookstyle {
