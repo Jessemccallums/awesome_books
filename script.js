@@ -69,8 +69,6 @@ const listPage = document.querySelector('#display-section');
 const formPage = document.querySelector('#form-section');
 const contactPage = document.querySelector('#contact-section');
 
-const timeSlot = document.querySelector('#time');
-
 listLink.addEventListener('click', () => {
   listPage.style.display = 'flex';
   formPage.style.display = 'none';
@@ -88,3 +86,21 @@ contactLink.addEventListener('click', () => {
   formPage.style.display = 'none';
   contactPage.style.display = 'flex';
 });
+
+const timeSlot = document.querySelector('#time');
+
+function displayTime() {
+  const now = new Date();
+  const month = (now.getMonth() + 1).toString();
+  const year = now.getFullYear().toString();
+  const day = now.getDay().toString();
+  const hour = now.getHours().toString();
+  const minute = now.getMinutes().toString();
+  const second = now.getSeconds().toString();
+
+  const timeToShow = month + ' ' + day + ' ' + year +', ' + hour+':'+minute+':'+second;
+
+  timeSlot.textContent = timeToShow;
+}
+
+displayTime();

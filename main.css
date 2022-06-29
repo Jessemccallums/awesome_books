@@ -138,3 +138,8 @@ h2 {
   margin-top: 10%;
   align-items: center;
 }
+
+#time {
+  float: right;
+  margin-right: 25px;
+}
