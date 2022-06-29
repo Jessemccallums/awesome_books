@@ -15,12 +15,12 @@ header {
 }
 
 footer {
-  position: fixed;
+  /* position: fixed;
   bottom: 1px;
   border: 2px solid rgb(0, 0, 0);
   width: 95vw;
   height: 25px;
-  margin: 25px;
+  margin: 25px; */
 }
 
 footer,
@@ -158,4 +158,16 @@ h2 {
 
 #message-alert {
   color: red;
+}
+
+
+
+.footer{
+  display: flex;
+  border: 2px solid rgb(0, 0, 0);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 25px;
+  padding: 5px;
 }
