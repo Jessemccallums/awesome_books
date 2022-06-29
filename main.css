@@ -23,8 +23,7 @@ footer {
   margin: 25px; */
 }
 
-footer>
-p {
+footer > p {
   padding: 2.5px;
 }
 
@@ -160,12 +159,9 @@ h2 {
   color: red;
 }
 
-
-
-.footer{
+.footer {
   display: flex;
   border: 2px solid rgb(0, 0, 0);
-  display: flex;
   justify-content: space-between;
   align-items: center;
   margin: 25px;
