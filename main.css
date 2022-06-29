@@ -19,8 +19,13 @@ footer {
   bottom: 1px;
   border: 2px solid rgb(0, 0, 0);
   width: 95vw;
-  padding: 5px;
+  height: 25px;
   margin: 25px;
+}
+
+footer,
+p {
+  padding: 2.5px;
 }
 
 #logo {
@@ -143,4 +148,14 @@ h2 {
 #time {
   float: right;
   margin-right: 25px;
+}
+
+#add-message {
+  color: green;
+  display: none;
+  align-items: center;
+}
+
+#message-alert {
+  color: red;
 }

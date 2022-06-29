@@ -10,6 +10,7 @@ class Book {
     const author = document.querySelector('#author');
     const addBtn = document.querySelector('#add-btn');
     const errorMessage = document.querySelector('#message-alert');
+    const addMessage = document.querySelector('#add-message');
 
     addBtn.addEventListener('click', (e) => {
       e.preventDefault();
@@ -19,14 +20,21 @@ class Book {
         const newBook = new Book(title.value, author.value);
         awesomeBooks.push(newBook);
         localStorage.setItem('awesomeBooks', JSON.stringify(awesomeBooks));
-        window.location.reload();
+        // window.location.reload();
+        title.value = '';
+        author.value = '';
+        addMessage.style.display = 'flex';
+        errorMessage.textContent = '';
       } else {
         errorMessage.textContent = 'Please fill every field';
+        addMessage.style.display = 'none';
+
       }
     });
   }
 
   static display() {
+
     const displayContainer = document.querySelector('#display');
     let awesomeBooks = [];
     awesomeBooks = JSON.parse(localStorage.getItem('awesomeBooks') || '[]');
@@ -40,6 +48,7 @@ class Book {
               </div>
             `;
     });
+
   }
 
   static remove() {
@@ -73,6 +82,8 @@ listLink.addEventListener('click', () => {
   listPage.style.display = 'flex';
   formPage.style.display = 'none';
   contactPage.style.display = 'none';
+  window.location.reload();
+
 });
 
 addLink.addEventListener('click', () => {
