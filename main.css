@@ -68,3 +68,11 @@ hr {
   width: 130px;
   margin: 10px auto;
 }
+
+#form-section {
+  display: none;
+}
+
+#contact-section {
+  display: none;
+}
