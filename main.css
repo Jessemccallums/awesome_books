@@ -12,6 +12,13 @@ header{
   align-items: center;
 }
 
+footer{
+  position: fixed;
+  bottom: 1px;
+  border: 2px solid rgb(0, 0, 0);
+  width: 100vw;
+  padding:5px;
+}
 #logo {
   padding: 5px;
   /* margin-left: 20px; */
@@ -120,9 +127,17 @@ hr {
 
 #form-section {
   display: none;
+  flex-direction: column;
+  margin-top: 10%;
 }
 
+h2{
+  margin: auto;
+}
 #contact-section {
   display: none;
+  flex-direction: column;
+  margin-top: 10%;
+  align-items: center;
 }
 

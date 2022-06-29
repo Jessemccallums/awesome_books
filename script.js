@@ -27,7 +27,7 @@ class Book {
   }
 
   static display() {
-    const displaySection = document.querySelector('#display');
+    const displaySection = document.querySelector('#display-section');
     let awesomeBooks = [];
     awesomeBooks = JSON.parse(localStorage.getItem('awesomeBooks') || '[]');
 
@@ -65,15 +65,26 @@ const listLink = document.querySelector('#list');
 const addLink = document.querySelector('#add');
 const contactLink = document.querySelector('#contact');
 
-const listPage = document.querySelector('#display');
+const listPage = document.querySelector('#display-section');
 const formPage = document.querySelector('#form-section');
 const contactPage = document.querySelector('#contact-section');
 
 const timeSlot = document.querySelector('#time');
 
-
 listLink.addEventListener('click', () => {
   listPage.style.display = 'flex';
   formPage.style.display = 'none';
   contactPage.style.display = 'none';
-})
+});
+
+addLink.addEventListener('click', () => {
+  listPage.style.display = 'none';
+  formPage.style.display = 'flex';
+  contactPage.style.display = 'none';
+});
+
+contactLink.addEventListener('click', () => {
+  listPage.style.display = 'none';
+  formPage.style.display = 'none';
+  contactPage.style.display = 'flex';
+});
